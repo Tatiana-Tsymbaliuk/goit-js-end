@@ -29,7 +29,7 @@ const handleClick = event => {
             
 };
 //console.log(LOCALSTORAGE_KEY);
- //localStorage.setItem(LOCALSTORAGE_KEY, "Trade Fiction Paperback");
+ localStorage.setItem(LOCALSTORAGE_KEY, "Trade Fiction Paperback");
 //localStorage.setItem("selected-category", "Series Books");
 
 //------------------Запрос на API
