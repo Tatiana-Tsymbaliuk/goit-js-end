@@ -67,14 +67,14 @@ return (refs.card = `
 async function renderFetch() {
          //refs.list.innerHTML = '';
 //if (localStorage.getItem('selected-category')) {
-      promise = await fetchBook().then(data => {
+      promises = await fetchBook().then(data => {
                         const result = data.map(value => {
                                 return value;
                         });
                         return result;
                 });
                 //refs.categoryField.innerHTML = refs.category;
-        for (data of promise) {
+        for (data of promises) {
                         refs.output.textContent = localStorage.getItem(LOCALSTORAGE_KEY);  
                         rendeSelectedCategory();
                         refs.categoryField.insertAdjacentHTML('beforeend', refs.card);
