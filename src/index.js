@@ -69,7 +69,7 @@ return (refs.card = `
 async function renderFetch() {
          //refs.list.innerHTML = '';
 //if (localStorage.getItem('selected-category')) {
-      promises = await fetchBook().then(data => {
+     let promises = await fetchBook().then(data => {
                         const result = data.map(value => {
                                 return value;
                         });
