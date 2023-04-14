@@ -5,10 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Page title</title>
     <link rel="stylesheet" href="./sass/index.scss" />
-    <script type="module" src="./index.js"></script>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/bookList.css">
+  
   </head>
   <body>
+  <div>
+    <ul class="categories__list" id="categories">
+      <li class="categories__item"><a href="" class="categories__link categories__link-all">All categories</a></li>
+    </ul>
+  </div>
+  <!-- <section class="bestSellers"> -->
+    <!-- <div class="bestSellers__container"> -->
+      <!-- <h2 class="category-title">
+        Best Sellers <span class="category-title--highlight">Books</span>
+      </h2> -->
+      <p class ="output bestSellers__container category-title"></p>
+      <div class="shop-card__category bestSellers__container"></div>
+      <!-- <button type="button" class="load-more is-hidden">Load more</button>  -->
+    <!-- </div> -->
+  <!-- </section> -->
     <!-- ❗️❗️❗️ Add partials like so for every page -->
-    <include src="./partials/example.html"></include>
+    <!-- <include src="./partials/example.html"></include> -->
+      <script type="module" src="./index.js"></script>
   </body>
 </html>
