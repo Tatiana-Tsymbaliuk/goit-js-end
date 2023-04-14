@@ -6,7 +6,6 @@ const refs = {
         loadBtn: document.querySelector('load-more'),
         output: document.querySelector(".output"),
         categoriesList: document.querySelector('.categories__list'), 
-  categoriesLink: document.querySelector('.categories__link')
 };
 const LOCALSTORAGE_KEY = "selected-category";
 
@@ -16,20 +15,23 @@ const fetchArray = fetch('https://books-backend.p.goit.global/books/category-lis
 .then(response => response.json())
 .then(data => {
 	const array = data.map(({ list_name }) => {
-	return `<li class = "categories__item"><a href = "" class = "categories__link">${list_name}</a></li>`
+	return `<li class = "categories__item"><a href = "" data-category='${list_name}'class = "categories__link">${list_name}</a></li>`
 	})
 	refs.categoriesList.insertAdjacentHTML('beforeend', array.join(''));
         console.log(array)
 	return array;
 });
+function hendelList() {
+        let categoriesList = document.querySelectorAll('.categories__item');
+        for (item of categoriesList) {
+                item.addEventListener('click', e => {
+                        localStorage.setItem(LOCALSTORAGE_KEY, e.target.dataset.category);
+                });
+        }
+}
 
-const handleClick = event => {
-        console.log(event);
-        localStorage.setItem(LOCALSTORAGE_KEY, event.list_name.value);  
-            
-};
 //console.log(LOCALSTORAGE_KEY);
- localStorage.setItem(LOCALSTORAGE_KEY, "Trade Fiction Paperback");
+ //localStorage.setItem(LOCALSTORAGE_KEY, "Trade Fiction Paperback");
 //localStorage.setItem("selected-category", "Series Books");
 
 //------------------Запрос на API
@@ -80,7 +82,7 @@ async function renderFetch() {
                         refs.categoryField.insertAdjacentHTML('beforeend', refs.card);
                 }
       
-        
+        hendelList();
   //} 
 
 }
